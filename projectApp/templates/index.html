@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<main>
+
+    <div id="app"></div>
+    <!-- Banner video Start -->
+    <section class="hero" id="hero">
+        <div class="heroText">
+            <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                The Plot Twist
+            </h1>
+            <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
+                "Life is a journey of moments,
+                where the breathtaking ones
+                are the milestones of our hearts."
+            </p>
+        </div>
+        <div class="videoWrapper">
+            <video autoplay="" loop="" muted="" class="custom-video">
+                <source src="{% static 'images/video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <!-- Banner video end -->
+    <br>
+    <br>
+    <!-- Text Start -->
+    <div class="container mb-5 pb-lg-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-3" data-aos="fade-up">Unravel the story...</h2>
+            </div>
+            <div class="col-lg-6 col-12 mt-3 mb-lg-5">
+                <p class="me-4" data-aos="fade-up" data-aos-delay="300">
+                    <a rel="nofollow" href="{% url 'homePage' %}">At The Plot Twist,</a>
+                    we believe that every book is a doorway to new worlds, unexpected adventures, and
+                    transformative experiences. Join us on this journey as we explore the pages that captivate
+                    our hearts and spark our imaginations.
+                    With each plot twist, we invite you to discover something new and embrace the joy of
+                    reading.
+                    <br>
+                    <br>
+                    Here, you’ll discover hidden gems and timeless classics, all curated to inspire your next
+                    literary journey. Our passion for books drives us to explore diverse genres and share our
+                    thoughts, helping you find that perfect read that resonates with your soul.
+                </p>
+            </div>
+            <div class="col-lg-6 col-12 mt-lg-3 mb-lg-5">
+                <p data-aos="fade-up" data-aos-delay="500">
+                    Let’s turn the page together and find your next
+                    favorite book!Our mission is to bring you the best of these literary gems—offering a curated
+                    collection of book files, tantalizing reviews, and the kind of bookish insights that spark
+                    joy in every reader's heart.So grab your favorite mug, settle into your coziest nook, and
+                    let’s embark on this wild adventure through the pages of life.
+                    <br>
+                    <br>
+
+                    Whether you’re a casual reader or a literary aficionado, we invite you to dive into our
+                    universe of stories. Let’s celebrate the art of storytelling together, where every book can
+                    lead to a new adventure!Let’s turn the page together and discover your next great read!
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Text End -->
+
+    <!-- Featured - Karousel ulkit start -->
+    <div uk-slider="parallax: true;">
+
+        <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-light">
+            <div>
+                <img src="{% static 'images/carousel/1 (1).jpeg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (1).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (10).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (11).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (13).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (12).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (14).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (15).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (2).jpeg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+            <div>
+                <img src="{% static 'images/carousel/1 (2).jpg' %}" width="1080" height="1350" alt="">
+                <div class="uk-position-center uk-panel">
+                </div>
+            </div>
+        </div>
+
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+    </div>
+    <!-- Karousel End -->
+    <br>
+    <br>
+
+    <!-- Featured Authors Section -->
+    <section class="featured-authors">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Featured Authors</h2>
+            <div class="row">
+                {% for author in authors %}
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:100 }}">
+                    <div class="author-card">
+                        <img src="{{ author.image.url }}" alt="{{ author.name }}" class="author-image">
+                        <h3 class="author-name">{{ author.name }}</h3>
+                        <p class="author-bio">{{ author.bio }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Featured Authors end -->
+
+    <!-- Newsletter Start-->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3" data-aos="fade-up">Subscribe to Our Newsletter</h2>
+                <p class="text-white-50" data-aos="fade-up" data-aos-delay="100">
+                    Stay updated with our latest book releases, reviews, and literary events.
+                </p>
+            </div>
+            <div class="subscribe-container">
+                <form class="newsletter-form" method="POST">
+                    {% csrf_token %}>
+                    <input name="subscribe" type="email" class="newsletter-input" placeholder="Enter your email address"
+                        required>
+                    <button type="submit" class="newsletter-btn">
+                        Subscribe Now
+                    </button>
+                </form>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest releases Start  -->
+    <section class="latest-releases">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Latest Releases</h2>
+            <div class="book-grid">
+                {% for book in latest_books %}
+                <div class="book-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:100 }}">
+                    <a href="{% url 'book_detail' book.id %}"> <img src="{{ book.cover_image.url }}"
+                            alt="{{ book.title }}" class="book-cover"></a>
+                    <div class="book-info">
+                        <h3 class="book-title">{{ book.title }}</h3>
+                        <p class="book-author">{{ book.author }}</p>
+                        <!--   <p class="book-description">{{ book.description }}</p> -->
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center" data-aos="fade-up">
+                <a href="{% url 'popularPage' %}" class="view-more-btn">
+                    View More Books
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right arrow-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Latest releases end -->
+
+    <!-- Classics Header -->
+    <section class="classics-header">
+        <div class="classics-title">
+            Timeless Classics
+            <span class="quill-animation">✒️</span>
+        </div>
+        <div class="classics-subtitle">
+            "Where every page tells a story that shaped literature"
+        </div>
+        <div class="classics-divider"></div>
+        <div class="classics-divider"></div>
+        <a href="{% url 'book_list' %}" class="explore-button">Explore Our Collection</a>
+    </section>
+
+    <br>
+    <!-- Classic- Book Library Start -->
+    <div class="container">
+        <div class="main">
+            <ul id="bk-list" class="bk-list clearfix">
+                <li>
+                    <div class="bk-book book-2">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>Les Mirables</span>
+                                    <span>Victor Hugo</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content">
+                                <p>Towards mid-day, when the weather was fine, he went forth and took a stroll in the
+                                    country or in town, often entering lowly dwellings. He was seen walking alone,
+                                    buried in his own thoughts, his eyes cast down, supporting himself on his long cane,
+                                    clad in his wadded purple garment of silk, which was very warm, wearing purple
+                                    stockings inside his coarse shoes, and surmounted by a flat hat which allowed three
+                                    golden tassels of large bullion to droop from its three points.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>It was a perfect festival wherever he appeared. One would have said that his presence
+                                    had something warming and luminous about it. The children and the old people came
+                                    out to the doorsteps for the Bishop as for the sun. He bestowed his blessing, and
+                                    they blessed him. They pointed out his house to any one who was in need of anything.
+                                </p>
+                            </div>
+                            <div class="bk-content bk-content-current">
+                                <p>Here and there he halted, accosted the little boys and girls, and smiled upon the
+                                    mothers. He visited the poor so long as he had any money; when he no longer had any,
+                                    he visited the rich.As he made his cassocks last a long while, and did not wish to
+                                    have it noticed, he never went out in the town without his wadded purple cloak. This
+                                    inconvenienced him somewhat in summer.</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>Les Mirables</span>
+                                <span>by Victor Hugo</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-3">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>1984</span>
+                                    <span>George Orwell</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>Suddenly his heart seemed to turn to ice and his bowels to water. A figure in blue
+                                    overalls was coming down the pavement, not ten metres away. It was the girl from the
+                                    Fiction Department, the girl with dark hair. The light was failing, but there was no
+                                    difficulty in recognizing her. She looked him straight in the face, then walked
+                                    quickly on as though she had not seen him.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>For a few seconds Winston was too paralysed to move. Then he turned to the right
+                                    andwalked heavily away, not noticing for the moment that he was going in the wrong
+                                    direction. At any rate, one question was settled. There was no doubting any longer
+                                    that the girl was spying on him.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>She must have followed him here, because it was not
+                                    credible that by pure chance she should have happened to be walking on the same
+                                    evening up the same obscure backstreet, kilometres distant from any quarter where
+                                    Party members lived. It was too great a coincidence.</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+                            <img src="images/3.png" alt="cat" />
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>1984</span>
+                                <span>George Orwell</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-1">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>Little Women</span>
+                                    <span>Louisa May Alcott</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>In order that we may start afresh and go to Meg’s wedding with free minds, it will be
+                                    well to begin with a little gossip about the Marches. And here let me premise that
+                                    if any of the elders think there is too much “lovering” in the story, as I fear they
+                                    may (I’m not afraid the young folks will make that objection), I can only say with
+                                    Mrs. March “What can you expect when I have four gay girls in the house, and a
+                                    dashing young neighbor over the way?”</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>The three years that have passed have brought but few changes to the quiet family.
+                                    The war is over, and Mr. March safely at home, busy with his books and the small
+                                    parish which found in him a minister by nature as by grace—a quiet, studious man,
+                                    rich in the wisdom that is better than learning, the charity which calls all mankind
+                                    “brother,” the piety that blossoms into character, making it august and lovely.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>These attributes, in spite of poverty and the strict integrity which shut him out
+                                    from the more worldly successes, attracted to him many admirable persons, as
+                                    naturally as sweet herbs draw bees, and as naturally he gave them the honey into
+                                    which fifty years of hard experience had distilled no bitter drop.</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>Little Women</span>
+                                <span>Louisa May Alcott</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-2">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>Jane Eyre</span>
+                                    <span>Charlotte Brontë</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content">
+                                <p>I both wished and feared to see Mr. Rochester on the day which followed this
+                                    sleepless night: I wanted to hear his voice again, yet feared to meet his eye.
+                                    During the early part of the morning, I momentarily expected his coming; he was not
+                                    in the frequent habit of entering the schoolroom, but he did step in for a few
+                                    minutes sometimes, and I had the impression that he was sure to visit it that day.
+                                </p>
+                            </div>
+                            <div class="bk-content">
+                                <p>But the morning passed just as usual: nothing happened to interrupt the quiet course
+                                    of Adèle’s studies; only soon after breakfast, I heard some bustle in the
+                                    neighbourhood of Mr. Rochester’s chamber, Mrs.Fairfax’s voice, and Leah’s, and the
+                                    cook’s﻿—that is, John’s wife﻿—and even John’s own gruff tones. There were
+                                    exclamations of “What a mercy master was not burnt in his bed!” “It is always
+                                    dangerous to keep a candle lit at night.”</p>
+                            </div>
+                            <div class="bk-content bk-content-current">
+                                <p>“How providential that he had presence of mind to think of the water-jug!” “I wonder
+                                    he waked nobody!” “It is to be hoped he will not take cold with sleeping on the
+                                    library sofa,” etc.
+                                    To much confabulation succeeded a sound of scrubbing and setting to rights; and when
+                                    I passed the room, in going downstairs to dinner, I saw through the open door that
+                                    all was again restored to complete order; only the bed was stripped of its hangings.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>Jane Eyre</span>
+                                <span>by Charlotte Brontë</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-3">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>Persuasion</span>
+                                    <span>Jane Austen</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>The remainder of Anne’s time at Uppercross, comprehending only two days, was spent
+                                    entirely at the mansion-house, and she had the satisfaction of knowing herself
+                                    extremely useful there, both as an immediate companion, and as assisting in all
+                                    those arrangements for the future, which, in Mr. and Mrs. Musgrove’s distressed
+                                    state of spirits, would have been difficulties.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>They had an early account from Lyme the next morning. Louisa was much the same. No
+                                    symptoms worse than before had appeared. Charles came a few hours afterwards, to
+                                    bring a later and more particular account. He was tolerably cheerful. A speedy cure
+                                    must not be hoped, but every thing was going on as well as the nature of the case
+                                    admitted. </p>
+                            </div>
+                            <div class="bk-content">
+                                <p>“She really left nothing for Mary to do. He and Mary had been persuaded to go early
+                                    to their inn last night. Mary had been hysterical again this morning. When he came
+                                    away, she was going to walk out with Captain Benwick, which, he hoped, would do her
+                                    good. He almost wished she had been prevailed on to come home the day before; but
+                                    the truth was, that Mrs. Harville left nothing for any body to do.”</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>Persuasion</span>
+                                <span>Jane Austen</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-1">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>The Idiot</span>
+                                    <span>Fyodor Dostoevsky</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>They went through the same rooms the prince had already passed through; Rogozhin
+                                    walked a little ahead, the prince followed. They came to a big reception room. Here
+                                    there were several paintings on the walls, all portraits of bishops or landscapes in
+                                    which nothing could be made out. Over the door to the next room hung a painting
+                                    rather strange in form, around six feet wide and no more than ten inches high. It
+                                    portrayed the Savior just taken down from the cross. </p>
+                            </div>
+                            <div class="bk-content">
+                                <p>The prince glanced fleetingly
+                                    at it, as if recalling something, not stopping, however, wanting to go on through
+                                    the door. He felt very oppressed and wanted to be out of this house quickly. But
+                                    Rogozhin suddenly stopped in front of the painting.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>"All these paintings here," he said, "my deceased father bought at auctions for a
+                                    rouble or two. He liked that. One man who's a connoisseur looked at them all: trash,
+                                    he said, but that one—the painting over the door, also bought for two roubles—he
+                                    said, isn't trash.In my father's time somebody showed up offering...</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+                            <p>In this nightmare vision of cats in revolt, fifteen-year-old Alex and his friends set out
+                                on a diabolical orgy of robbery, rape, torture and murder. Alex is jailed for his
+                                teenage delinquency and the State tries to reform him - but at what cost?</p>
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>The Idiot</span>
+                                <span>Fyodor Dostoevsky</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-2">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>The Stranger</span>
+                                    <span>Albert Camus</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content">
+                                <p>Mother died today. Or, maybe, yesterday; I can't be sure. The telegram from the Home
+                                    says: YOUR MOTHER PASSED AWAY. FUNERAL TOMORROW. DEEP SYMPATHY. Which leaves the
+                                    matter doubtful; it could have been yesterday.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>The Home for Aged Persons is at Marengo, some fifty miles from Algiers. With the two
+                                    o'clock bus I should get there well before nightfall. Then I can spend the night
+                                    there, keeping the usual vigil beside the body, and be back here by tomorrow
+                                    evening. I have fixed up with my employer for two days' leave; obviously, under the
+                                    circumstances, he couldn't refuse. </p>
+                            </div>
+                            <div class="bk-content bk-content-current">
+                                <p> Still, I had an idea he looked annoyed, and I said, without thinking: “Sorry, sir,
+                                    but it's not my fault, you know.”Afterwards it struck me I needn't have said that. I
+                                    had no reason to excuse myself; it was up to him to express his sympathy and so
+                                    forth. </p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>The Stranger</span>
+                                <span>by Alber Camus</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-3">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>The Fall</span>
+                                    <span>Alber Camus</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>But, after all, I was on the right side; that was enough to satisfy my conscience.
+                                    The feeling of the law, the satisfaction of being right, the joy of self-esteem,
+                                    cher monsieur, are powerful incentives for keeping us upright or keeping us moving
+                                    forward. On the other hand, if you deprive men of them, you transform them into dogs
+                                    frothing with rage.
+                                <p>
+                            </div>
+                            <div class="bk-content">
+                                <p>How many crimes committed merely because their authors could not endure being wrong!
+                                    I once knew a manufacturer who had a perfect wife, admired by all, and yet he
+                                    deceived her. That man was literally furious to be in the wrong, to be blocked from
+                                    receiving, or granting himself, a certificate of virtue. </p>
+                            </div>
+                            <div class="bk-content">
+                                <p>The more virtues his wife manifested, the more vexed he became. Eventually, living in
+                                    the wrong became unbearable to him. What do you think he did then? He gave up
+                                    deceiving her? Not at all. He killed her. That is how I entered into relations with
+                                    him.My situation was more enviable. Not only did I run no risk of joining the
+                                    criminal camp (in particular I had no chance of killing my wife, being a bachelor)..
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>The Fall</span>
+                                <span>Albert Camus</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-1">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>Lolita</span>
+                                    <span>Vladimir Nabokov</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>Lolita, light of my life, ﬁre of my loins. My sin, my soul. Lo-lee-ta: the tip of
+                                    the tongue taking a trip of three steps down the palate to tap, at three, on the
+                                    teeth.
+                                    Lo. Lee. Ta.
+                                    She was Lo, plain Lo, in the morning, standing four feet ten in one sock. She was
+                                    Lola in slacks. She was Dolly at school. She was Dolores on the dotted line. But in
+                                    my arms she was always Lolita.
+                                    Did she have a precursor?</p>
+                            </div>
+                            <div class="bk-content">
+                                <p> She did, indeed she did. In point of fact, there
+                                    might have been no Lolita at all had I not loved, one summer, a certain initial
+                                    girl-child. In a princedom by the sea. Oh when? About as many years before Lo-
+                                    lita was born as my age was that summer.You can always count on a murderer for
+                                    a fancy prose style.
+                                    Ladies and gentlemen of the jury, exhibit number one is what the seraphs, the mis-
+                                    informed, simple, noble-winged seraphs, envied. Look at this tangle of thorns.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>I was born in 1910, in Paris. My father was a gentle, easy-going person, a salad of
+                                    racial genes: a Swiss citizen, of mixed French and Austrian descent, with a dash of
+                                    the Danube in his veins. I am going to pass around in a minute some lovely, glossy-
+                                    blue picture-postcards. He owned a luxurious hotel on the Riviera.</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>Lolita</span>
+                                <span>Vladimir Nabokov</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-2">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>Invisible Man</span>
+                                    <span>Ralph Ellison</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content">
+                                <p>I am an invisible man. No, I am not a spook like those who haunted Edgar Allan
+                                    Poe; nor am I one of your Hollywood-movie ectoplasms. I am a man of substance, of
+                                    flesh and bone, fiber and liquids -- and I might even be said to possess a mind. I
+                                    am invisible, understand, simply because people refuse to see me. Like the bodiless
+                                    heads you see sometimes in circus sideshows, it is as though I have been surrounded
+                                    by mirrors of hard, distorting glass.</p>
+                            </div>
+                            <div class="bk-content">
+                                <p> When they approach me they see only my surroundings, themselves, or figments of
+                                    their imagination -- indeed, everything and anything except me. Nor is my
+                                    invisibility exactly a matter of a bio-chemical accident to my
+                                    epidermis. That invisibility to which I refer occurs because of a peculiar
+                                    disposition of the eyes of those with whom I come in contact. </p>
+                            </div>
+                            <div class="bk-content bk-content-current">
+                                <p>A matter of the construction of their inner eyes, those eyes with which they look
+                                    through their physical eyes upon reality. I am not complaining, nor am I protesting
+                                    either. It is sometimes advantageous to be unseen, although it is most often rather
+                                    wearing on the nerves. Then too, you're constantly being bumped against by those of
+                                    poor vision. </p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>Invisible Man</span>
+                                <span>by Ralph Ellison</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-3">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>One Hundred Years of Solitude</span>
+                                    <span>GABRIEL GARCIA MARQUEZ</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>MANY YEARS LATER as he faced the firing squad, Colonel Aureliano Buendía was to
+                                    remember that distant afternoon when his father took him to discover ice. At that
+                                    time Macondo was a village of twenty adobe houses, built on the bank of a river of
+                                    clear water that ran along a bed of polished stones, which were white and enormous,
+                                    like prehistoric eggs. The world was so recent that many things lacked names, and in
+                                    order to indicate...</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>Every year during the month of March a family of ragged gypsies would set up their
+                                    tents near the village, and with a great uproar of pipes and kettledrums they would
+                                    display new inventions. First they brought the magnet. A heavy gypsy with an untamed
+                                    beard and sparrow hands, who introduced himself as Melquíades, put on a bold public
+                                    demonstration of what he himself called the eighth wonder of the learned alchemists
+                                    of Macedonia. </p>
+                            </div>
+                            <div class="bk-content">
+                                <p> He went from house to house dragging two metal ingots and everybody was amazed to
+                                    see pots, pans, tongs, and braziers tumble down from their places and beams creak
+                                    from the desperation of nails and screws trying to emerge, and even objects that had
+                                    been lost for a long time appeared from where they had been searched for most and
+                                    went dragging along in turbulent confusion behind Melquíades’ magical irons.</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>One Hundred Years of Solitude</span>
+                                <span>GABRIEL G. MARQUEZ</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bk-book book-1">
+                        <div class="bk-front">
+                            <div class="bk-cover-back"></div>
+                            <div class="bk-cover">
+                                <h2>
+                                    <span>War and Peace</span>
+                                    <span>Leo Tolstoy</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bk-page">
+                            <div class="bk-content bk-content-current">
+                                <p>Instead of staying to dinner Pierre drove away
+                                    immediately after leaving Natasha’s room. He scoured the town in search of Anatole
+                                    Kuragin. At the very thought of this man the blood rushed to his heart and he could
+                                    hardly
+                                    breathe. He was nowhere to be found, not on the ice-hills, not at the gypsies’, not
+                                    at
+                                    Comoneno’s. Pierre drove to the club. In there it was just like any normal day with
+                                    members coming in for dinner and sitting around in groups. </p>
+                            </div>
+                            <div class="bk-content">
+                                <p>They greeted Pierre and went on
+                                    talking about the city and the latest news. A footman well accustomed to Pierre’s
+                                    friends
+                                    and habits greeted him, and said several things: a place had been left for him in
+                                    the small
+                                    dining-room, Prince Mikhail Zakharych was in the library, and Pavel Timofeich had
+                                    not yet come
+                                    inW</p>
+                            </div>
+                            <div class="bk-content">
+                                <p>One of Pierre’s acquaintances broke off from chatting about the weather to ask if
+                                    he’d heard about Kuragin’s abduction of young Countess Rostov, which was the talk of
+                                    the town, but was it true? Pierre laughed it off as a bit of nonsense, having just
+                                    come from the
+                                    Rostovs’. He asked after Anatole; one man said he wasn’t in yet, another said he was
+                                    expected for dinner.</p>
+                            </div>
+                        </div>
+                        <div class="bk-back">
+                        </div>
+                        <div class="bk-right"></div>
+                        <div class="bk-left">
+                            <h2>
+                                <span>War and Peace</span>
+                                <span>Leo Tolstoy</span>
+                            </h2>
+                        </div>
+                        <div class="bk-top"></div>
+                        <div class="bk-bottom"></div>
+                    </div>
+                </li>
+
+
+            </ul>
+            <div class="bookshelf"></div>
+        </div>
+    </div>
+    <!-- Book Library End -->
+    <br>
+
+    <!-- Authentication Section 
+    <section class="auth-section" id="auth">
+        <div class="container">
+            <div class="auth-container" data-aos="fade-up">
+                <div class="auth-tabs">
+                    <div class="auth-tab active" onclick="switchTab('login')">Login</div>
+                    <div class="auth-tab" onclick="switchTab('register')">Register</div>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <input type="email" class="auth-input" placeholder="Email address" required>
+                    <input type="password" class="auth-input" placeholder="Password" required>
+                    <button type="submit" class="auth-btn">Login</button>
+
+                    <div class="social-auth">
+                        <button type="button" class="social-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-google" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                            </svg>
+                            Continue with Google
+                        </button>
+                        <button type="button" class="social-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                            Continue with Facebook
+                        </button>
+                    </div>
+                </form>
+
+                <form id="registerForm" class="auth-form" style="display: none;">
+                    <input type="text" class="auth-input" placeholder="Full name" required>
+                    <input type="email" class="auth-input" placeholder="Email address" required>
+                    <input type="password" class="auth-input" placeholder="Password" required>
+                    <input type="password" class="auth-input" placeholder="Confirm password" required>
+                    <button type="submit" class="auth-btn">Create Account</button>
+
+                    <div class="social-auth">
+                        <button type="button" class="social-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-google" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                            </svg>
+                            Sign up with Google
+                        </button>
+                        <button type="button" class="social-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                            Sign up with Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+-->
+
+</main>
+{% endblock %}

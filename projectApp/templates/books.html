@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/books.css' %}">
+
+<br>
+<br>
+<br>
+<!-- Library Header -->
+<header class="py-5 bg-light classics-header">
+    <div class="container text-center">
+        <h1 class="display-4">Digital Library</h1>
+        <p class="lead">Browse and download from our collection of free books</p>
+    </div>
+</header>
+
+<!-- Filters -->
+<section class="filters">
+    <div class="container">
+        <form method="GET" action="{% url 'book_list' %}">
+            <div class="row">
+                <div class="col-md-3">
+                    <select class="form-select" name="genre">
+                        <option selected>Genre</option>
+                        <option>Fiction</option>
+                        <option>Non-Fiction</option>
+                        <option>Mystery</option>
+                        <option>Science Fiction</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" name="author">
+                        <option selected>Author</option>
+                        <option>Stephen King</option>
+                        <option>J.K. Rowling</option>
+                        <option>George R.R. Martin</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" name="format">
+                        <option selected>Format</option>
+                        <option>PDF</option>
+                        <option>EPUB</option>
+                        <option>MOBI</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100" style="background-color:#646cff;;">Apply
+                        Filters</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Book Grid -->
+<main class="container">
+    <div class="book-grid">
+        {% for book in books %}
+        <div class="book-card">
+            <a href="{% url 'book_detail' book.id %}">
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }}" class="book-image">
+            </a>
+            <div class="book-info">
+                <h3 class="book-title">{{ book.title }}</h3>
+                <p class="book-author">{{ book.author }}</p>
+                <p class="mb-3">Format: {{ book.format }}</p>
+                <a href="{% url 'download_book' book.id %}" class="download-btn">Download</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if books.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ books.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ books.number }} of {{ books.paginator.num_pages }}.
+            </span>
+
+            {% if books.has_next %}
+            <a href="?page={{ books.next_page_number }}">next</a>
+            <a href="?page={{ books.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</main>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+{% endblock %}

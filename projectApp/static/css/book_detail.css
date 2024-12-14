@@ -1,0 +1,55 @@
+/* Base reset styles */
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    background-color: #f5f5f5;
+}
+/* Layout styles */
+.book-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    min-height: 400px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.book-image {
+    flex: 0 0 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-content {
+    flex: 1;
+    padding: 30px;
+    position: relative;
+    background: #ffffff;
+}
+
+.content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .book-container {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .book-image {
+        flex: 0 0 200px;
+        width: 100%;
+    }
+
+    .book-content {
+        padding: 20px;
+    }
+}

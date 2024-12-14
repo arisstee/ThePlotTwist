@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/books.css' %}">
+<link rel="stylesheet" href="{% static 'css/book_detail.css' %}">
+
+
+<br>
+<br>
+<br>
+
+
+<!-- Book Detail -->
+<div class="container py-5">
+    <!-- Header -->
+    <header class="text-center mb-5">
+        <h1 class="display-4">{{ book.title }}</h1>
+        <p class="lead text-muted">by {{ book.author }}</p>
+    </header>
+
+    <!-- Book Card -->
+    <div class="card shadow-lg border-0">
+        <div class="row g-0">
+            <!-- Book Image -->
+            <div class="col-md-4 book-image-container">
+                <div class="image-wrapper h-100">
+                    <img src="{{ book.cover_image.url }}" class="img-fluid h-100 w-100" alt="{{ book.title }}">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Book Content -->
+            <div class="col-md-8">
+                <div class="card-body d-flex flex-column h-100 p-4 p-lg-5">
+                    <h2 class="card-title h3 mb-3">{{ book.title }}</h2>
+
+                    <div class="book-meta mb-4">
+                        <span class="badge bg-secondary me-2">{{ book.author }}</span>
+                        <span class="badge bg-primary">{{ book.genre }}</span>
+                    </div>
+
+                    <p class="card-text flex-grow-1">{{ book.description }}</p>
+
+                    <div class="book-details row mb-4">
+                        <div class="col-6 col-md-4 mb-3">
+                            <small class="text-muted d-block">Author</small>
+                            <span class="fw-medium">{{ book.author }}</span>
+                        </div>
+                        <div class="col-6 col-md-4 mb-3">
+                            <small class="text-muted d-block">Genre</small>
+                            <span class="fw-medium">{{ book.genre }}</span>
+                        </div>
+                        <div class="col-6 col-md-4 mb-3">
+                            <small class="text-muted d-block">Format</small>
+                            <span class="fw-medium">{{ book.format }}</span>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'download_book' book.id %}" class="btn btn-primary align-self-start">
+                        Download Book
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+{% endblock %}

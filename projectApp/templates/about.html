@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+<br>
+<br>
+<!-- Hero Section -->
+<section class="hero-about">
+    <div class="hero-content" data-aos="fade-up">
+        <h1>Our Story</h1>
+        <p>Connecting readers with their next great adventure</p>
+    </div>
+    <div class="floating-books">
+        <div class="book" data-aos="fade-right" data-aos-delay="200">
+            <img src="{% static 'images/carousel/1 (1).jpeg' %}" alt="Book Cover 1">
+        </div>
+        <div class="book" data-aos="fade-left" data-aos-delay="400">
+            <img src="{% static 'images/carousel/1 (1).jpg' %}" alt="Book Cover 2">
+        </div>
+        <div class="book" data-aos="fade-up" data-aos-delay="600">
+            <img src="{% static 'images/carousel/1 (10).jpg' %}" alt="Book Cover 3">
+        </div>
+    </div>
+
+</section>
+
+<!-- Mission Section -->
+<section class="mission-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6" data-aos="fade-right">
+                <h2>Our Mission</h2>
+                <p>At The Plot Twist, we believe that every book has the power to change a life. Our mission is to
+                    make literature accessible to everyone, everywhere. We're not just a library; we're a gateway to
+                    countless worlds, ideas, and possibilities.</p>
+                <div class="mission-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Books</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100K+</span>
+                        <span class="stat-label">Readers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Authors</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="mission-image"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-image">
+                    <img src="{% static 'images/team/member1.jpg' %}" alt="Team Member">
+                </div>
+                <h3>Sarah Johnson</h3>
+                <p>Founder & Chief Librarian</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                <div class="member-image">
+                    <img src="{% static 'images/team/member2.jpg' %}" alt="Team Member">
+                </div>
+                <h3>Lily Rose</h3>
+                <p>Head of Curation</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                <div class="member-image">
+                    <img src="{% static 'images/team/member3.jpg' %}" alt="Team Member">
+                </div>
+                <h3>Emily Rodriguez</h3>
+                <p>Community Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="timeline-section">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>The Plot Twist was born with a simple idea: making books accessible to everyone</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h3>2021</h3>
+                    <p>Reached our first milestone of 10,000 registered readers</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>2022</h3>
+                    <p>Launched our mobile app and expanded our collection to 50,000+ books</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>Introduced community features and reading challenges</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="library-portal" id="downloads">
+    <div class="container">
+        <div class="portal-content" data-aos="fade-up">
+            <h2 class="portal-title">Enter Our Digital Library</h2>
+            <p class="portal-description">Discover a vast collection of literary treasures waiting to be explored
+            </p>
+
+            <div class="portal-features">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-book" viewBox="0 0 16 16">
+                            <path
+                                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                        </svg>
+                    </div>
+                    <h3>Extensive Collection</h3>
+                    <p>From classics to contemporary bestsellers</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-download" viewBox="0 0 16 16">
+                            <path
+                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                            <path
+                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg>
+                    </div>
+                    <h3>Easy Downloads</h3>
+                    <p>Simple one-click download process</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-collection" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z" />
+                        </svg>
+                    </div>
+                    <h3>Multiple Formats</h3>
+                    <p>Available in PDF, EPUB, and MOBI</p>
+                </div>
+            </div>
+
+            <a href="{% url 'book_list' %}" class="portal-button" data-aos="fade-up" data-aos-delay="400">
+                <span class="button-text">Enter Library</span>
+                <span class="button-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="value-icon">📚</div>
+                <h3>Accessibility</h3>
+                <p>Making literature available to everyone, everywhere</p>
+            </div>
+            <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="value-icon">🤝</div>
+                <h3>Community</h3>
+                <p>Building connections through shared reading experiences</p>
+            </div>
+            <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="value-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>Constantly improving how we deliver books to you</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/about.js' %}"></script>
+
+{% endblock %}
