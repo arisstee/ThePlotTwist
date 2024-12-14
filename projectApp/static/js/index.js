@@ -120,96 +120,12 @@ var Books = (function () {
 	return { init: init };
 
 })();
-document.addEventListener('DOMContentLoaded', () => {
-	// Mobile menu functionality
-	const menuIcon = document.querySelector('.menu-icon');
-	const navLinks = document.querySelector('.nav-links');
-	const searchAuth = document.querySelector('.search-auth');
-
-	menuIcon.addEventListener('click', () => {
-		navLinks.classList.toggle('active');
-		searchAuth.classList.toggle('active');
-
-		// Animate menu icon
-		menuIcon.classList.toggle('active');
-	});
 
 
-
-	// Smooth scroll for navigation links
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
-			const target = document.querySelector(this.getAttribute('href'));
-			if (target) {
-				target.scrollIntoView({
-					behavior: 'smooth'
-				});
-			}
-		});
-	});
-
-	// Authentication buttons
-	const loginBtn = document.querySelector('.login-btn');
-	const registerBtn = document.querySelector('.register-btn');
-
-	loginBtn.addEventListener('click', () => {
-		// Implement login functionality here
-		console.log('Login clicked');
-	});
-
-	registerBtn.addEventListener('click', () => {
-		// Implement register functionality here
-		console.log('Register clicked');
-	});
-});
-
-document.addEventListener('uikit:init', () => {
-	// do something
-})
-
-
-// Mobile menu functionality
-const menuIcon = document.querySelector('.menu-icon');
-const navLinks = document.querySelector('.nav-links');
-
-// Toggle menu on click
-menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (event) => {
-    const isClickInside = navLinks.contains(event.target) || menuIcon.contains(event.target);
-    
-    if (!isClickInside && navLinks.classList.contains('active')) {
-        menuIcon.classList.remove('active');
-        navLinks.classList.remove('active');
-    }
-});
-
-// Close menu when window is resized above mobile breakpoint
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        menuIcon.classList.remove('active');
-        navLinks.classList.remove('active');
-    }
-});
-
-// Smooth scroll for navigation links
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu after clicking a link
-            menuIcon.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
-    });
-});
+document.querySelector(' .menu-icon').onclick = function(){
+	const navLinks=
+	document.querySelector('.nav-links');
+		navLinks.style.display =
+		navLinks.style.display ==='block'?
+		'none': 'block';
+}
